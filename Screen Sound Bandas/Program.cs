@@ -1,59 +1,44 @@
-﻿Dictionary<string, List<int>> bandasRegistradas = new Dictionary<string, List<int>>();
-bandasRegistradas.Add("Linkin Park", new List<int> { 10, 8, 6 });
-bandasRegistradas.Add("The Beatles", new List<int>());
+﻿using System;
+using System.Threading;
 
-Dictionary<string, List<string>> albunsPorBanda = new Dictionary<string, List<string>>();
+bool executando = true;
 
-void ExibirLogo()
+while (executando)
 {
-    Console.WriteLine(@"
+    Console.Clear();
+    Funcoes.ExibirLogo();
 
-░██████╗░█████╗░██████╗░███████╗███████╗███╗░░██╗  ░██████╗░█████╗░██╗░░░██╗███╗░░██╗██████╗░
-██╔════╝██╔══██╗██╔══██╗██╔════╝██╔════╝████╗░██║  ██╔════╝██╔══██╗██║░░░██║████╗░██║██╔══██╗
-╚█████╗░██║░░╚═╝██████╔╝█████╗░░█████╗░░██╔██╗██║  ╚█████╗░██║░░██║██║░░░██║██╔██╗██║██║░░██║
-░╚═══██╗██║░░██╗██╔══██╗██╔══╝░░██╔══╝░░██║╚████║  ░╚═══██╗██║░░██║██║░░░██║██║╚████║██║░░██║
-██████╔╝╚█████╔╝██║░░██║███████╗███████╗██║░╚███║  ██████╔╝╚█████╔╝╚██████╔╝██║░╚███║██████╔╝
-╚═════╝░░╚════╝░╚═╝░░╚═╝╚══════╝╚══════╝╚═╝░░╚══╝  ╚═════╝░░╚════╝░░╚═════╝░╚═╝░░╚══╝╚═════╝░
-");
-    Console.WriteLine("Boas vindas ao Screen Sound 2.0!");
-}
-
-void ExibirOpcoesDoMenu()
-{
-    ExibirLogo();
-    Console.WriteLine("1- Registrar uma banda");
-    Console.WriteLine("2- Registrar um álbum de uma banda");
+    Console.WriteLine("1- Registrar banda");
+    Console.WriteLine("2- Registrar álbum");
     Console.WriteLine("3- Listar bandas");
-    Console.WriteLine("4- Avaliar uma banda");
-    Console.WriteLine("5- Exibir detalhes de uma banda");
+    Console.WriteLine("4- Avaliar banda");
+    Console.WriteLine("5- Exibir detalhes");
     Console.WriteLine("6- Sair");
+    Console.Write("\nEscolha uma opção: ");
 
-    Console.Write("\nDigite a sua opção: ");
-    string opcaoEscolhida = Console.ReadLine()!;
-    int opcaoEscolhidaNumerica = int.Parse(opcaoEscolhida);
-
-    switch (opcaoEscolhidaNumerica)
+    if (int.TryParse(Console.ReadLine(), out int opcao))
     {
-        case 1:
-            Funcoes.RegistrarBanda();
-            break;
-        case 2:
-            Funcoes.RegistrarAlbum();
-            break;
-        case 3:
-            Funcoes.MostrarBandasRegistradas();
-            break;
-        case 4:
-            Funcoes.AvaliarUmaBanda();
-            break;
-        case 5:
-            Funcoes.ExibirDetalhes();
-            break;
-        case 6:
-            Console.WriteLine("Saindo :)");
-            break;
-        default:
-            Console.WriteLine("Opção inválida");
-            break;
+        switch (opcao)
+        {
+            case 1: Funcoes.RegistrarBanda(); break;
+            case 2: Funcoes.RegistrarAlbum(); break;
+            case 3: Funcoes.MostrarBandasRegistradas(); break;
+            case 4: Funcoes.AvaliarUmaBanda(); break;
+            case 5: Funcoes.ExibirDetalhes(); break;
+            case 6:
+                Console.WriteLine("Saindo...");
+                Thread.Sleep(1000);
+                executando = false;
+                break;
+            default:
+                Console.WriteLine("Opção inválida.");
+                Thread.Sleep(1000);
+                break;
+        }
+    }
+    else
+    {
+        Console.WriteLine("Entrada inválida.");
+        Thread.Sleep(1000);
     }
 }

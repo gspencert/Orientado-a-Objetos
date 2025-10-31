@@ -1,0 +1,5 @@
+C:\Users\ROOT\Desktop\CODE\POO C#\Orientado-a-objetos\Screen Sound Bandas\obj\Debug\net8.0\ScreenSound.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ROOT\Desktop\CODE\POO C#\Orientado-a-objetos\Screen Sound Bandas\obj\Debug\net8.0\ScreenSound.AssemblyInfoInputs.cache
+C:\Users\ROOT\Desktop\CODE\POO C#\Orientado-a-objetos\Screen Sound Bandas\obj\Debug\net8.0\ScreenSound.AssemblyInfo.cs
+C:\Users\ROOT\Desktop\CODE\POO C#\Orientado-a-objetos\Screen Sound Bandas\obj\Debug\net8.0\ScreenSound.csproj.CoreCompileInputs.cache
+C:\Users\ROOT\Desktop\CODE\POO C#\Orientado-a-objetos\Screen Sound Bandas\obj\Debug\net8.0\ScreenSound.sourcelink.json
