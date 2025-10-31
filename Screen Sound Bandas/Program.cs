@@ -26,7 +26,7 @@ while (executando)
             case 4: Funcoes.AvaliarUmaBanda(); break;
             case 5: Funcoes.ExibirDetalhes(); break;
             case 6:
-                Console.WriteLine("Saindo...");
+                Console.WriteLine("Saindo :)");
                 Thread.Sleep(1000);
                 executando = false;
                 break;
